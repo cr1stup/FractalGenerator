@@ -13,8 +13,9 @@ public class ExTransformation implements Transformation {
         double p0 = Math.sin(theta + r);
         double p1 = Math.cos(theta - r);
 
-        double newX = r * (Math.pow(p0, 3) + Math.pow(p1, 3));
-        double newY = r * (Math.pow(p0, 3) - Math.pow(p1, 3));
+        final int power = 3;
+        double newX = r * (Math.pow(p0, power) + Math.pow(p1, power));
+        double newY = r * (Math.pow(p0, power) - Math.pow(p1, power));
 
         return new Point(newX, newY);
     }
