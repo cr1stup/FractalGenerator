@@ -29,7 +29,7 @@ public abstract class BaseRenderer implements Renderer {
     private static final int INIT_STEPS = -20;
 
     @Override
-    public FractalImage render(int width, int height, Rect world) {
+    public FractalImage render(int width, int height, Rect world) throws InterruptedException {
         FractalImage image = FractalImage.create(width, height);
         List<AffineTransformation> affineTransformations = generateAffineTransformations();
         renderAllImage(image, world, affineTransformations);
@@ -41,7 +41,7 @@ public abstract class BaseRenderer implements Renderer {
         FractalImage image,
         Rect world,
         List<AffineTransformation> affineTransformations
-    );
+    ) throws InterruptedException;
 
     protected void renderOneSample(FractalImage image, Rect world, List<AffineTransformation> affineTransformations) {
         Point currentPoint = RectUtils.randomPoint(world);
