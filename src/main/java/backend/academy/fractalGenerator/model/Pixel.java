@@ -2,8 +2,10 @@ package backend.academy.fractalGenerator.model;
 
 import java.awt.Color;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 
 @AllArgsConstructor
+@Getter
 public class Pixel {
     private int red;
     private int green;
