@@ -3,14 +3,17 @@ package backend.academy.fractalGenerator.model;
 import java.awt.Color;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.Setter;
 
 @AllArgsConstructor
 @Getter
+@Setter
 public class Pixel {
     private int red;
     private int green;
     private int blue;
     private int hitCount;
+    private double normal;
 
     public void saturateHitCount(Color color) {
         if (hitCount == 0) {
